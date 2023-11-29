@@ -1,6 +1,6 @@
 " File:        todo.txt.vim
 " Description: Todo.txt syntax settings
-" Author:      David Beniamine <David@Beniamine.net>,Leandro Freitas <freitass@gmail.com>
+" Author:      Antonio Paolini, David Beniamine <David@Beniamine.net>,Leandro Freitas <freitass@gmail.com>
 " License:     Vim license
 " Website:     http://github.com/dbeniamine/todo.txt-vim
 
@@ -46,12 +46,26 @@ execute 'syntax match TodoDueToday    /\v\c<due:' . s:todayDate . '>/ contains=N
 " Other priority colours might be defined by the user
 highlight  default  link  TodoKey        Special
 highlight  default  link  TodoDone       Comment
-highlight  default  link  TodoPriorityA  Identifier
-highlight  default  link  TodoPriorityB  statement
-highlight  default  link  TodoPriorityC  type
+"________________________________________________________Modifiche -AP- 2023-10-09
+"highlight  default  link  TodoPriorityA  Identifier
+"highlight  default  link  TodoPriorityB  statement
+"highlight  default  link  TodoPriorityC  type
+highlight  TodoPriorityA  term=bold ctermfg=red guifg=#ff0000 gui=bold
+highlight  TodoPriorityB  term=bold ctermfg=yellow guifg=#ffb000 gui=bold
+highlight  TodoPriorityC  ctermfg=green guifg=#00c000
+"Priorità (W) per le cose "Week, in Settimana", 
+"         (Y) per le cose in attesa di qualcuno o qualcosa 
+"             (la Y ricorda più input che convergono in un solo output), e 
+"         (Z) per le "prima o poi".
+highlight  default  link  TodoPriorityW String
+highlight  TodoPriorityY  term=standout ctermfg=1 ctermbg=7 guifg=#0087af guibg=#eeeeee gui=undercurl guisp=#66ceed
+highlight  default  link  TodoPriorityZ  SpecialKey
+"
 highlight  default  link  TodoDate       PreProc
-highlight  default  link  TodoProject    Special
-highlight  default  link  TodoContext    Special
+"highlight  default  link  TodoProject    Special
+"highlight  default  link  TodoContext    Special
+hi TodoProject    ctermfg=blue guifg=#0000ff
+hi TodoContext    ctermfg=magenta guifg=#ff00ff
 highlight  default  link  TodoDueToday   Todo
 
 function! todo#GetDateRegexForPastDates(...)

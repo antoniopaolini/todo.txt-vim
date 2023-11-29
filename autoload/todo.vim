@@ -40,11 +40,11 @@ endfunction
 function! todo#PrioritizeAdd (priority)
     let oldpos=todo#GetCurpos()
     let line=getline('.')
-    if line !~ '^([A-F])'
+    if line !~ '^([A-Z])'
         :call todo#PrioritizeAddAction(a:priority)
         let oldpos[2]+=4
     else
-        exec ':s/^([A-F])/('.a:priority.')/'
+        exec ':s/^([A-Z])/('.a:priority.')/'
     endif
     call setpos('.',oldpos)
 endfunction
@@ -60,9 +60,9 @@ endfunction
 
 function! todo#PrependDate()
     if (getline(".") =~ '\v^\(')
-        execute "normal! 0f)a\<space>\<esc>l\"=strftime(\"%Y-%m-%d\")\<esc>P"
+        execute "normal! 0f)a\<space>\<esc>l\"=strftime(\"%Y-%m-%d\")\<esc>Pl"
     else
-        normal! I=strftime("%Y-%m-%d ")
+        execute "normal! I\<c-r>=strftime(\"%Y-%m-%d \")\<cr>"
     endif
 endfunction
 
@@ -141,17 +141,23 @@ endfunction
 function! todo#RemoveCompleted()
     " Check if we can write to done.txt before proceeding.
     let l:target_dir = expand('%:p:h')
+    let l:currentfile=expand('%:t')
+
     if exists("g:TodoTxtForceDoneName")
         let l:done=g:TodoTxtForceDoneName
     else
-        let l:currentfile=expand('%:t')
-
         if l:currentfile =~ '[Tt]oday.txt'
             let l:done=substitute(substitute(l:currentfile,'today','done-today',''),'Today','Done-Today','')
         else
             let l:done=substitute(substitute(l:currentfile,'todo','done',''),'Todo','Done','')
         endif
     endif
+
+    if l:done == l:currentfile
+        echoerr "Done file is same as current file: ".l:done
+        return
+    endif
+
     let l:done_file = l:target_dir.'/'.l:done
     echo "Writing to ".l:done_file
     if !filewritable(l:done_file) && !filewritable(l:target_dir)
@@ -167,7 +173,9 @@ endfunction
 function! todo#Sort(type)
     " vim :sort is usually stable
     " we sort first on contexts, then on projects and then on priority
-    let g:Todo_fold_char='x'
+    if g:Todo_update_fold_on_sort
+        let g:Todo_fold_char=a:type
+    endif
     let oldcursor=todo#GetCurpos()
     if(a:type != "")
         exec ':sort /.\{-}\ze'.a:type.'/'
@@ -297,7 +305,9 @@ function! todo#HierarchicalSort(symbol, symbolsub, dolastsort)
         "Empty buffer do nothing
         return
     endif
-    let g:Todo_fold_char=a:symbol
+    if g:Todo_update_fold_on_sort
+        let g:Todo_fold_char=a:symbol
+    endif
     "if the sort modes doesn't start by '!' it must start with a space
     let l:sortmode=Todo_txt_InsertSpaceIfNeeded(g:Todo_txt_first_level_sort_mode)
     let l:sortmodesub=Todo_txt_InsertSpaceIfNeeded(g:Todo_txt_second_level_sort_mode)

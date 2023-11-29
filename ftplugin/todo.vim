@@ -121,6 +121,11 @@ setlocal foldmethod=expr
 setlocal foldexpr=TodoFoldLevel(v:lnum)
 setlocal foldtext=TodoFoldText()
 
+" Update fold method after sort by default
+if ! exists("g:Todo_update_fold_on_sort")
+    let g:Todo_update_fold_on_sort=1
+endif
+
 " Go to first completed task
 let oldpos=getcurpos()
 if(!exists("g:Todo_fold_char"))

@@ -70,12 +70,12 @@ all you need to be productive. See an example Todo.txt file":
 
     (A) Call Mom @Phone +Family
     (A) Schedule annual checkup +Health
-    (B) Outline chapter 5 +FamilyNovel @Computer
-    (C) Add cover sheets @ComputerOffice +FamilyTPSReports
-    Plan backyard herb garden @ComputerHome
-    Pick up milk @ComputerGroceryStore
-    Research self-publishing services +FamilyNovel @ComputerComputer
-    x Download Todo.txt mobile app @ComputerPhone
+    (B) Outline chapter 5 +Novel @Computer
+    (C) Add cover sheets @Office +TPSReports
+    Plan backyard herb garden @Home
+    Pick up milk @GroceryStore
+    Research self-publishing services +Novel @Computer
+    x Download Todo.txt mobile app @Phone
 
 ### Why this fork ?
 
@@ -138,8 +138,11 @@ names are recognized as todo:
     [Tt]odo-YYYY-MM-DD.txt
     [Tt]odo.txt
     [Tt]oday.txt
+    .todo/*.txt
+    $TODO_DIR/*.txt
+    $TODO_FILE
 
-And obviously the same are recognize as done:
+Similarly, the following are recognized as done:
 
     YYYY-MM-[Dd]one.txt
     YYYY-MM-DD[Dd]one.txt
@@ -147,6 +150,10 @@ And obviously the same are recognize as done:
     [Dd]one-YYYY-MM-DD.txt
     [Dd]one.txt
     [Dd]one-[Tt]oday.txt
+    $DONE_FILE
+
+Where `$TODO_DIR`, `$TODO_FILE`, and `$DONE_FILE` are optional environment variables
+that correspond to those used by [todo.txt-cli](https://github.com/todotxt/todo.txt-cli/)
 
 Moreover, `<LocalLeader>D` moves the task under the cursor to the done.txt
 file corresponding to the current todo.txt, aka if you are editing
@@ -199,10 +206,10 @@ a completion, then add the following lines to your vimrc:
 This fork provides a hierarchical sorting function designed to do by project
 and/or by context sorts and a priority sort.
 
-`<LocalLeader>sc` : Sort the file by context then by priority
-`<LocalLeader>scp` : Sort the file by context, project then by priority
-`<LocalLeader>sp` : Sort the file by project then by priority
-`<LocalLeader>spc` : Sort the file by project, context then by priority
++ `<LocalLeader>sc` : Sort the file by context then by priority
++ `<LocalLeader>scp` : Sort the file by context, project then by priority
++ `<LocalLeader>sp` : Sort the file by project then by priority
++ `<LocalLeader>spc` : Sort the file by project, context then by priority
 
 The user can give argument for the two calls to vim sort function by changing
 the following variables:
@@ -337,7 +344,14 @@ disable this behavior by setting the following global variable:
 
 ## Fold
 
-Todo.txt files can be folded by projects or context (see `:help fold`), by
-default they are foldable by context, to use project fold :
+Todo.txt files can be folded by projects or context (see `:help fold`). By
+default they are foldable by context. To use project fold add the following to
+your vimrc:
 
     let g:Todo_fold_char='+'
+
+Note that the fold method by default changes to match the sort order regardless
+of what Todo_fold_char is set to.  If you prefer to keep the fold method
+constant even after changing the sort method set the variable below as follows:
+
+    let g:Todo_update_fold_on_sort=0
