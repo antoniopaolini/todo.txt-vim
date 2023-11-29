@@ -1,5 +1,3 @@
-**This repository is only a mirror, all developpment happens at [gitlab](https://gitlab.com/dbeniamine/todo.txt-vim)**
-
 # Todo.txt-vim
 
         #####                                                #     #

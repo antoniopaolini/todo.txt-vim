@@ -1,11 +1,11 @@
 " File:        todo.txt.vim
 " Description: Todo.txt filetype detection
-" Author:      David Beniamine <David@Beniamine.net>, Leandro Freitas <freitass@gmail.com>
+" Author:      Antonio Paolini <paolini@gmail.com>, David Beniamine <David@Beniamine.net>, Leandro Freitas <freitass@gmail.com>
 " License:     Vim license
 " Website:     http://github.com/dbeniamine/todo.txt-vim
 
 if ! exists("g:Todo_txt_loaded")
-    let g:Todo_txt_loaded=0.8.2
+    let g:Todo_txt_loaded=0.9.0
 endif
 
 " Save context {{{1
@@ -102,10 +102,13 @@ endif
 
 " Additional options {{{2
 " Prefix creation date when opening a new line {{{3
-if exists("g:Todo_txt_prefix_creation_date")
+if exists("g:Todo_txt_prefix_creation_date") && g:Todo_txt_prefix_creation_date == 1
     nnoremap <script> <silent> <buffer> o o<C-R>=strftime("%Y-%m-%d")<CR> 
     nnoremap <script> <silent> <buffer> O O<C-R>=strftime("%Y-%m-%d")<CR> 
-    inoremap <script> <silent> <buffer> <CR> <CR><C-R>=strftime("%Y-%m-%d")<CR> 
+    "inoremap <script> <silent> <buffer> <CR> <CR><C-R>=strftime("%Y-%m-%d")<CR> 
+    "inoremap <script> <silent> <buffer> <expr> <CR> ((pumvisible()) ? ("\<C-y>") : ("\<CR>\<C-R>=strftime(\"%Y-%m-%d\")\<CR> "))
+    "equivalente alla seguente
+    inoremap <script> <silent> <buffer> <expr> <CR> ((pumvisible()) ? ("\<C-y>") : ("\r\<C-R>=strftime(\"%Y-%m-%d\")\r "))
 endif
 
 " Functions for maps {{{1

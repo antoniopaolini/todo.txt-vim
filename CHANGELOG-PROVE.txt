@@ -1,0 +1,47 @@
+Repo modificato da me!
+1. Ho aggiunto .\plugin\todo.vim per avere la sintassi colorata, che veniva
+incasinata da Rainbow Parentheses Improved
+2. Ho modificato la sintassi colorata, copiando quella del plugin https://github.com/dsiroky/vim-todotxt
+3. Nella sintassi ho aggiunto una evidenziazione per le priorità W, Y e Z
+(resto della Settimana, Waiting e ZZZ_prima_o_poi)
+
+v2023-11-21 
+Modificata la funzione todo#PrependDate() per avere uniformità di
+comportamento nei due casi del test:
+  execute "normal! 0f)a\<space>\<esc>l\"=strftime(\"%Y-%m-%d\")\<esc>P" ==> execute "normal! 0f)a\<space>\<esc>l\"=strftime(\"%Y-%m-%d\")\<esc>Pl"
+e
+  execute "normal! I\<c-r>=strftime(\"%Y-%m-%d \")\<cr>" ==> execute "normal! I\<c-r>=strftime(\"%Y-%m-%d \")\<cr>"
+
+v2023-11-23
+ - L'assegnazione della priorità funzionava se non c'era già una priorità o se
+   c'è una priorità da A a F. Dal G in poi veniva riaggiunta.
+   Esteso il check fino alla Z.
+ - Aggiunte le map per W, Y e Z
+v2023-11-24
+ - Modificato 
+ autocmd BufNewFile,BufRead [Tt]odo.txt set filetype=todo
+   in
+ autocmd BufNewFile,BufRead [Tt]odo.txt if index(['help'], &ft) < 0 | set filetype=todo
+ altrimenti aprendo l'help di todo.txt-vim avevo errore sugli unmap delle
+ date che ho nel vimrc
+ In alternativa dovevo fare l'unmap qui, nel plugin **FIXME** NON FUNZIONA
+
+v2023-11-26
+Rimosso plugin/todo.vim: i comandi li ho messi nel mio .vimrc
+====================== plugin/todo.vim ======================
+" Mie aggiunte -AP-
+"au BufRead * RainbowToggleOff
+"let g:rainbow_active = 0
+"""Messe nel .vimrc
+
+"map <localLeader>z \a0t)26
+
+"noremap  <script> <silent> <buffer> <localleader>w :call todo#PrioritizeAdd('W')<CR>
+"noremap  <script> <silent> <buffer> <localleader>y :call todo#PrioritizeAdd('Y')<CR>
+"noremap  <script> <silent> <buffer> <localleader>z :call todo#PrioritizeAdd('Z')<CR>
+
+
+"if exists("$TODO_DIR")
+"    au BufNewFile,BufRead $TODO_DIR/*.txt set filetype=todo
+"endif        
+============================================================

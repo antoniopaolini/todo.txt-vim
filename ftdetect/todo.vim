@@ -5,6 +5,7 @@
 " Website:     http://github.com/dbeniamine/todo.txt-vim
 
 autocmd BufNewFile,BufRead [Tt]odo.txt set filetype=todo
+"autocmd BufNewFile,BufRead [Tt]odo.txt if index(['help'], &ft) < 0 | set filetype=todo
 autocmd BufNewFile,BufRead [Tt]odo-\d\\\{4\}-\d\\\{2\}-\d\\\{2\}.txt set filetype=todo
 autocmd BufNewFile,BufRead [Tt]odo-\d\\\{4\}-\d\\\{2\}.txt set filetype=todo
 autocmd BufNewFile,BufRead \d\\\{4\}-\d\\\{2\}-\d\\\{2\}-[Tt]odo.txt set filetype=todo
