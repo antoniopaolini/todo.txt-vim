@@ -35,6 +35,8 @@ Rimosso plugin/todo.vim: i comandi li ho messi nel mio .vimrc
 """Messe nel .vimrc
 
 "map <localLeader>z \a0t)26
+Questo sopra era un primo tentativo di aggiungere la priorità "Z" andando a
+mettere la (A) e poi incrementandola di 26 lettere
 
 "noremap  <script> <silent> <buffer> <localleader>w :call todo#PrioritizeAdd('W')<CR>
 "noremap  <script> <silent> <buffer> <localleader>y :call todo#PrioritizeAdd('Y')<CR>

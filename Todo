@@ -1,0 +1,10 @@
+Vedi "issues" su https://gitlab.com/dbeniamine/todo.txt-vim/-/issues
+Ad esempio:
+
+
+2024-05-09
+https://gitlab.com/dbeniamine/todo.txt-vim/-/issues/52
+Si potrebbe implementare una funzione per cui se c'è già la priorità e ridò la stessa questa viene tolta.
+
+2024-05-09 Correggere la posizione del "Cancelled" nel file seguendo il
+formato ufficiale (issue 51 su gitlab)
