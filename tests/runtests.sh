@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 REPO_TOP=$(git rev-parse --show-toplevel)
 cd "${REPO_TOP}"
