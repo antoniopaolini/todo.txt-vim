@@ -1,17 +1,37 @@
-test-vim-latest:
-    image: thinca/vim:v7.4
-    script:
-        - cd tests
-        - bash runtests.sh
+---
+test-vim-alpine-edge:
+  image: library/alpine:edge
+  script:
+    - apk add bash git vim
+    - cd tests
+    - git clone https://github.com/junegunn/vader.vim
+    - bash runtests.sh vim "$( pwd )/vader.vim"
 
+# thinca/vim:latest has vim v9.0.1879 which isn't even the greatest of v9.0 and
+# definitely not a v9.1 version. Not much point testing it as the version from
+# alpine is newer.
+
+test-nvim-alpine-edge:
+  image: library/alpine:edge
+  script:
+    - apk update
+    - apk add bash git neovim
+    - cd tests
+    - git clone https://github.com/junegunn/vader.vim
+    - bash runtests.sh nvim "$( pwd )/vader.vim"
+
+# lambdalisue/neovim-ci is 5 years old and thus has nvim v0.5.0-1ff5b60. Not
+# much point testing it as the version from alpine is newer.
+
+# thinca/vim:v7.4 means literally v7.4. The test relies on getcurpos() which
+# appeared first in v7.4.312
 test-vim-7.4:
-    image: thinca/vim:v7.4
-    script:
-        - cd tests
-        - bash runtests.sh
-
-test-neovim:
-    image: lambdalisue/neovim-ci
-    script:
-        - cd tests
-        - bash runtests.sh
+  image:
+    name: thinca/vim:v7.4.2367
+    entrypoint: [""]
+  script:
+    - apk update
+    - apk add bash git
+    - cd tests
+    - git clone https://github.com/junegunn/vader.vim
+    - bash runtests.sh vim "$( pwd )/vader.vim"
