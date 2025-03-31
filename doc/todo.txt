@@ -109,20 +109,20 @@ Todo.txt-vim is a filetype plugin, make sure that your vimrc contains :
 <
 + Vizardry
 
-    If you have Vizardry(https://github.com/dbeniamine/vizardry) installed,
+    If you have Vizardry(https://gitlab.com/dbeniamine/vizardry) installed,
     you can run from vim:
 >
         :Invoke -u dbeniamine todo.txt-vim
 <
 + Pathogen install
 >
-        git clone https://github.com/dbeniamine/todo.txt-vim.git ~/.vim/bundle/todo.txt-vim
+        git clone https://gitlab.com/dbeniamine/todo.txt-vim.git ~/.vim/bundle/todo.txt-vim
 <
     Then from vim: `:Helptags` to update the doc
 
 + Quick install
 >
-        git clone https://github.com/dbeniamine/todo.txt-vim.git
+        git clone https://gitlab.com/dbeniamine/todo.txt-vim.git
         cd todo.txt-vim
         cp -r ./* ~/.vim
 <
@@ -159,7 +159,7 @@ Similarly, the following are recognized as done:
 <
 Where `$TODO_DIR`, `$TODO_FILE`, and `$DONE_FILE` are optional environment
 variables that correspond to those used by todo.txt-cli
-(https://github.com/todotxt/todo.txt-cli/)
+(https://gitlab.com/todotxt/todo.txt-cli/)
 
 Moreover, `<LocalLeader>D` moves the task under the cursor to the done.txt
 file corresponding to the current todo.txt, aka if you are editing

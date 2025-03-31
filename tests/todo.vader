@@ -2,7 +2,7 @@
 " Description: Vader tests for todo.txt-vim plugin
 " Author:      Peter (fretep) <githib.5678@9ox.net>
 " Licence:     Vim licence
-" Website:     http://github.com/dbeniamine/todo.txt.vim
+" Website:     http://gitlab.com/dbeniamine/todo.txt-vim
 
 " [Vader](https://github.com/junegunn/vader.vim) is a simple unit testing
 " plugin for VIM.
