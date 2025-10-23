@@ -57,6 +57,12 @@ highlight  TodoPriorityC  ctermfg=green guifg=#00c000
 "         (Y) per le cose in attesa di qualcuno o qualcosa 
 "             (la Y ricorda più input che convergono in un solo output), e 
 "         (Z) per le "prima o poi".
+"________________________________________________________Modifiche -AP- 2024-10-21
+" Aggiungo la possibilità di inserire una riga di titolo per i progetti
+"syntax  match  TodoProjectiTitle   '/^=\+.*=$'  contains=NONE
+"hi default link TodoProjectTitle   Underlined
+"---messe in $VIMFILES/after/syntax poiché non sono relative al formato standard todo.txt
+"_________________________________________________________________________________
 highlight  default  link  TodoPriorityW String
 highlight  TodoPriorityY  term=standout ctermfg=1 ctermbg=7 guifg=#0087af guibg=#eeeeee gui=undercurl guisp=#66ceed
 highlight  default  link  TodoPriorityZ  SpecialKey

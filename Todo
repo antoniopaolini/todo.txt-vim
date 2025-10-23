@@ -8,3 +8,8 @@ Si potrebbe implementare una funzione per cui se c'è già la priorità e ridò 
 
 2024-05-09 Correggere la posizione del "Cancelled" nel file seguendo il
 formato ufficiale (issue 51 su gitlab)
+
+2024-06-14
+Creare un comando prendendo spunto delle funzioni presenti per rimuovere i
+task svolti, postare righe o gruppi di righe (magari con la selezione
+visuale) in un altro file TODO (es, prima_o_poi, oppure progetto-X, etc)
