@@ -1,3 +1,4 @@
 *.swp
 doc/tags
+doc/screenshot_USO_INTERNO/*
 *.pyc

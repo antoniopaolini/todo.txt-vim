@@ -1,3 +1,31 @@
+v0.9.1		- 2025-10-23 -AP-
+	syntax/todo.vim 
+		* Modified TodoKey regex: A time string (HH:mm) was treated as a keyword.
+		+ Added revision number to the file.
+
+""""""""""""""""""""""""""FIX changelog under this line"""""""""""""""""""""""""
+v2025-10-23
+ + Aggiunta evidenziazione di "TodoWaitingFrom" per indicare un'attività che
+   dipende da qualcuno o qualche altra attività.
+ + Aggiunta evidenziazione di "TodoReplyTo" per indicare un'attività che
+   implica che io dia una risposta a qualcuno.
+ * Creata la cartella "after" nel plugin. Qui ho aggiunto le keyword non
+   standard per il formato todo.txt
+ Note:
+  Per evidenziare solo la keyword, senza gli spazi all'inizio, ho usato
+    l'atomo \zs che seleziona l'inizio del pattern da riconoscere.
+    Quindi "syntax  match   TodoWaitingFrom  '\s◀\S*'  contains=NONE" mi
+    evidenzia il pattern compreso lo spazio iniziale mentre se modifico in
+    "syntax  match   TodoWaitingFrom  '\s\zs◀\S*'  contains=NONE" dico che la
+    corrispondenza inizia (\zs) dal carattere ◀.
+  In caso di tack con priorità "colorata", ad esempio (A), tutta la riga
+    viene evidenziata rossa, comprese le keywords precedenti.  Per applicare
+    la diversa colorazione alle keyword sopra, devo aggiungerle al contenuto
+    di "syn match" delle priorità.
+    Quindi, ad esempio, 
+    syntax  match  TodoPriorityA  '^(A) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
+   
+
 v2023-11-26
  Rimosso plugin/todo.vim: i comandi seguenti li ho messi nel mio .vimrc
  ====================== plugin/todo.vim ======================
@@ -49,27 +77,5 @@ v2023-11-01
  2. Ho modificato la sintassi colorata, copiando quella del plugin https://github.com/dsiroky/vim-todotxt
  3. Nella sintassi ho aggiunto una evidenziazione per le priorità W, Y e Z
 (resto della Settimana, Waiting e ZZZ_prima_o_poi)
-
-v2025-10-23
- + Aggiunta evidenziazione di "TodoWaitingFrom" per indicare un'attività che
-   dipende da qualcuno o qualche altra attività.
- + Aggiunta evidenziazione di "TodoReplyTo" per indicare un'attività che
-   implica che io dia una risposta a qualcuno.
- * Creata la cartella "after" nel plugin. Qui ho aggiunto le keyword non
-   standard per il formato todo.txt
- Note:
-  Per evidenziare solo la keyword, senza gli spazi all'inizio, ho usato
-    l'atomo \zs che seleziona l'inizio del pattern da riconoscere.
-    Quindi "syntax  match   TodoWaitingFrom  '\s◀\S*'  contains=NONE" mi
-    evidenzia il pattern compreso lo spazio iniziale mentre se modifico in
-    "syntax  match   TodoWaitingFrom  '\s\zs◀\S*'  contains=NONE" dico che la
-    corrispondenza inizia (\zs) dal carattere ◀.
-  In caso di tack con priorità "colorata", ad esempio (A), tutta la riga
-    viene evidenziata rossa, comprese le keywords precedenti.  Per applicare
-    la diversa colorazione alle keyword sopra, devo aggiungerle al contenuto
-    di "syn match" delle priorità.
-    Quindi, ad esempio, 
-    syntax  match  TodoPriorityA  '^(A) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-   
 
 
