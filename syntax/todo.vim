@@ -52,7 +52,7 @@ highlight  default  link  TodoDone       Comment
 "highlight  default  link  TodoPriorityB  statement
 "highlight  default  link  TodoPriorityC  type
 highlight  TodoPriorityA  term=bold ctermfg=red guifg=#ff0000 gui=bold
-highlight  TodoPriorityB  term=bold ctermfg=yellow guifg=#ffb000 gui=bold
+highlight  TodoPriorityB  term=bold ctermfg=yellow guifg=#ff8000 gui=bold
 highlight  TodoPriorityC  ctermfg=green guifg=#00c000
 "Priorità (W) per le cose "Week, in Settimana", 
 "         (Y) per le cose in attesa di qualcuno o qualcosa 
@@ -68,13 +68,16 @@ highlight  default  link  TodoDate       PreProc
 "highlight  default  link  TodoContext    Special
 hi TodoProject    ctermfg=blue guifg=#0000ff
 hi TodoContext    ctermfg=magenta guifg=#ff00ff
-highlight  default  link  TodoDueToday   Todo
+" Modifico questo sotto
+"highlight  default  link  TodoDueToday   Todo
+highlight  default  link  TodoDueToday   TodoPriorityA
 
 "________________________________________________________Modifiche -AP- 2024-10-21
 " Aggiungo la possibilità di inserire una riga di titolo per i progetti
 "syntax  match  TodoProjectiTitle   '/^=\+.*=$'  contains=NONE
 "hi default link TodoProjectTitle   Underlined
-"---messe in $VIMFILES/after/syntax poiché non sono relative al formato standard todo.txt
+"---messe in $VIMFILES/after/syntax poiché non sono relative 
+"   al formato standard todo.txt
 ""________________________________________________________Modifiche -AP- 2025-10-23
 " Aggiungo la possibilità di inserire la relazione con altri, asd esempio se
 " devo dare una risposta a qualcuno o se aspetto la fine dell'attività di
@@ -88,7 +91,12 @@ highlight  default  link  TodoDueToday   Todo
 "E li aggiungo al contenuto di Syn Match delle priorità (vedi changelog per
 "i dettagli).
 "
-"---messe in $PLUGIN_DIR/after/syntax poiché non sono relative al formato standard todo.txt
+"---messe in $PLUGIN_DIR/after/syntax poiché non sono relative 
+"   al formato standard todo.txt
+""________________________________________________________Modifiche -AP- 2025-11-14
+" - Modificata TodoPriorityB da #ffb000 a #ff8000 (più scura e leggibile)
+" - Modificata TodoDueToday da grassetto verde a grassetto rosso (come priorità A)
+"
 ""_________________________________________________________________________________
 
 function! todo#GetDateRegexForPastDates(...)

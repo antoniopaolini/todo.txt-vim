@@ -1,5 +1,5 @@
 " File:        after/todo.txt.vim
-" Description: Todo.txt syntax settings
+" Description: Todo.txt syntax settings,mapping and other improvements
 " Author:      Antonio Paolini
 " License:     Vim license
 " Website:     FIXME http://github.com/dbeniamine/todo.txt-vim
@@ -28,3 +28,15 @@ syntax  match   TodoReplyTo      '\s\zs▶\S*'  contains=NONE
 hi default link 	TodoWaitingFrom	DiffAdd
 hi default link 	TodoReplyTo		DiffDelete
 "hi default link 	TodoReplyTo		SpellBad
+"
+" Two maps to save me from digit digraph (<CTRL-k>PL = "◀",  <CTRL-k>PR = "▶")
+imap > ▶
+imap < ◀
+
+"________________________________________________________Modifiche -AP- 2025-11-14
+"Aggiungo una funzione di filtro per cercare velocementtra i task
+"(Per ora la metto in questo file, poi la sposterò in after/plugin? O mettu
+"tutto solo in "after"?)
+command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile syn=todo | put! a
+"Filter & show in a Volatile buffer (TODO: si può fare un map?)
+command -nargs=? FV Filter <args>
