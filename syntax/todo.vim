@@ -74,7 +74,7 @@ highlight  default  link  TodoDueToday   TodoPriorityA
 
 "________________________________________________________Modifiche -AP- 2024-10-21
 " Aggiungo la possibilità di inserire una riga di titolo per i progetti
-"syntax  match  TodoProjectiTitle   '/^=\+.*=$'  contains=NONE
+"syntax  match  TodoProjectTitle   '/^=\+.*=$'  contains=NONE
 "hi default link TodoProjectTitle   Underlined
 "---messe in $VIMFILES/after/syntax poiché non sono relative 
 "   al formato standard todo.txt

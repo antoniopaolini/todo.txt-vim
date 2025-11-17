@@ -35,8 +35,8 @@ imap < ◀
 
 "________________________________________________________Modifiche -AP- 2025-11-14
 "Aggiungo una funzione di filtro per cercare velocementtra i task
-"(Per ora la metto in questo file, poi la sposterò in after/plugin? O mettu
+"(Per ora la metto in questo file, poi la sposterò in after/plugin? O metto
 "tutto solo in "after"?)
-command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile syn=todo | put! a
+command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile syn=todo | put! a | noh
 "Filter & show in a Volatile buffer (TODO: si può fare un map?)
 command -nargs=? FV Filter <args>

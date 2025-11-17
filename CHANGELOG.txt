@@ -1,3 +1,7 @@
+v0.903		- 2025-11-17 -AP-
+	after/syntax/todo.vim 
+		* Improved command Filter; no search highlight after opening buffer
+
 v0.9.2		- 2025-11-14 -AP-
 	after/syntax/todo.vim 
 		+ added ":Filter" command (and :FV alias) to search and open results in a volatile
