@@ -5,7 +5,7 @@
 " Website:     http://github.com/dbeniamine/todo.txt-vim
 
 if ! exists("g:Todo_txt_loaded")
-    let g:Todo_txt_loaded=0.9.3
+    let g:Todo_txt_loaded=0.9.4
 endif
 
 " Save context {{{1

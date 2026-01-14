@@ -1,4 +1,11 @@
-v0.903		- 2025-11-17 -AP-
+v0.9.4		- 2026-01-14 -AP-
+	after/syntax/todo.vim 
+		+ Added character "▶" (Black Right-Pointing Triangle unicode U+25B6,
+		  digraph PR) to "ToDoProjectTitle", in order to make a torn, ragged
+		  ribbon title (by putting ◀ at the end of line to not have trailing
+		  spaces).
+
+v0.9.3		- 2025-11-17 -AP-
 	after/syntax/todo.vim 
 		* Improved command Filter; no search highlight after opening buffer
 

@@ -13,6 +13,7 @@
 " Mi piace il bold,reverse, ma anche il bold,underline non era male
 
 syntax  match   TodoProjectTitle   '^\(=\|_\)\+.*$'  contains=NONE
+syntax  match   TodoProjectTitle   '^\(▶\|_\)\+.*$'  contains=NONE
 "syntax  match   TodoProjectTitle   '^\(=\|_\)\+\(\s\(\w\|=\)\+\)*$'  contains=NONE
 "hi TodoProjectTitle  cterm=bold,underline guifg=#0000ff gui=bold,underline
 hi TodoProjectTitle  cterm=bold,underline guifg=#0000ff gui=bold,reverse
