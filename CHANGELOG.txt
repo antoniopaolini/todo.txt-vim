@@ -1,3 +1,7 @@
+v0.9.5		- 2026-04-29 -AP-
+	after/syntax/todo.vim 
+ 		- Removed Filter command. 
+		  Too useful to be relegate to a todo list files. Moved in .vimrc.
 v0.9.4		- 2026-01-14 -AP-
 	after/syntax/todo.vim 
 		+ Added character "▶" (Black Right-Pointing Triangle unicode U+25B6,
