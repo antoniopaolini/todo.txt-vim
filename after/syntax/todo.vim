@@ -19,7 +19,7 @@ syntax  match   TodoProjectTitle   '^\(▶\|_\)\+.*$'  contains=NONE
 hi TodoProjectTitle  cterm=bold,underline guifg=#0000ff gui=bold,reverse
 
 "________________________________________________________Modifiche -AP- 2025-10-23
-" Aggiungo la possibilità di inserire la relazione con altri, asd esempio se
+" Aggiungo la possibilità di inserire la relazione con altri, ad esempio se
 " devo dare una risposta a qualcuno o se aspetto la fine dell'attività di
 " qualcuno per poter procedere.
 " Li vado a etichettare con "WaitingFrom" (◀) e "ReplyTo" (▶)
@@ -43,3 +43,12 @@ imap < ◀
 "command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile syn=todo | put! a | noh
 ""Filter & show in a Volatile buffer (TODO: si può fare un map? R: si, vedi function NarrowSearch nel mio vimrc )
 "command -nargs=? FV Filter <args>
+
+
+"________________________________________________________Modifiche -AP- 2026-05-26
+"Definisco una evidenziazione per le righe di intestazione del plugin NrrwRgn,
+"per renderle meno evidenti.
+syntax match NrrwRgnDelim '^\/\*.*\*\/'
+hi default link NrrwRgnDelim Ignore
+"hi default link NrrwRgnDelim PmenuThumb
+

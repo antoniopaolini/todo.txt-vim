@@ -1,15 +1,29 @@
 Vedi "issues" su https://gitlab.com/dbeniamine/todo.txt-vim/-/issues
 Ad esempio:
+https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=239475c23e121e8603d8bf916c7951335e28f49a
 
+
+***
+2026-06-03
+Copiare le funzioni di ricerca Filter Volatile (:FV) e Filter Edit (:FE) nella 
+documentazione o nel plugin (magari con una opzione per attivarle).
+N.B. :FE deve controllare la dipendenza da NrrwRgn!
+
+2026-06-03
+Ho creato una regola in syntax che mi "nasconde" le righe di intestazione
+del plugin NrrwRgn. Potrei creare una variabile che imposta se attivare o 
+no questo highlight (vedi per esempio come è gestita in ftplugin\todo.vim
+la variabile "g:Todo_txt_prefix_creation_date".
 
 2024-05-09
 https://gitlab.com/dbeniamine/todo.txt-vim/-/issues/52
-Si potrebbe implementare una funzione per cui se c'è già la priorità e ridò la stessa questa viene tolta.
+Si potrebbe implementare una funzione per cui se c'è già la priorità e ridò
+la stessa questa viene tolta.
 
 2024-05-09 Correggere la posizione del "Cancelled" nel file seguendo il
 formato ufficiale (issue 51 su gitlab)
 
 2024-06-14
-Creare un comando prendendo spunto delle funzioni presenti per rimuovere i
-task svolti, postare righe o gruppi di righe (magari con la selezione
+Creare un comando, prendendo spunto delle funzioni presenti per rimuovere i
+task svolti, per spostare righe o gruppi di righe (magari con la selezione
 visuale) in un altro file TODO (es, prima_o_poi, oppure progetto-X, etc)

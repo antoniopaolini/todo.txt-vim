@@ -92,12 +92,11 @@ function! todo#FixFormat()
 endfunction
 
 function! todo#UnMarkAsDone(status)
-    if a:status==''
-        let pat=''
-    else
-        let pat=' '.a:status
-    endif
-    exec ':s/\C^x\s*\d\{4}-\d\{1,2}-\d\{1,2}'.pat.'\s*//g'
+    "Modified in order to match the below correction in todo#MarkAsDone function.
+    "Cancelled" should be placed after all the date, see:
+    "https://gitlab.com/dbeniamine/todo.txt-vim/-/work_items/51)      - 2026-06-03 -AP-
+    exec ':s/\C^x\s*\d\{4}-\d\{1,2}-\d\{1,2}\s*\(\d\{4}-\d\{1,2}-\d\{1,2}\s*\)\=\(\V'.a:status.'\m\)\=\s*/\1/g'
+    "P.S. Why \d{1,2}? For local date??? It's no compliant with todo.txt format.   -AP-
     silent s/\C\(.*\) pri:\([A-Z]\)/(\2) \1/e
 endfunction
 
@@ -109,7 +108,13 @@ function! todo#MarkAsDone(status)
         exec ':s/\C^(\([A-Z]\))\(.*\)/\2 pri:\1/e'
     endif
     if a:status!=''
-        exec 'normal! I'.a:status.' '
+        if getline('.') =~ '^\s*\d\{4}-\d\{2}-\d\{2}'
+        "Function modified to comply with the todo.txt format  - 2026-06-03 -AP-
+        "exec 'normal! I'.a:status.' '
+            exec ':s/\C\(\d\{4}-\d\{1,2}-\d\{1,2}\)/\1 '.a:status.'/e'
+        else
+            exec 'normal! I'.a:status.' '
+        endif
     endif
     call todo#PrependDate()
     if (getline(".") =~ '^ ')

@@ -1,7 +1,27 @@
+v0.9.6 			- 2026-06-03 -AP-
+	autoload/todo.vim
+		- Functions todo#MarkAsDone and todo#UnMarkAsDone in order to be 
+		  compliant with todo.txt format: [CANCELLED] tag goes after all
+		  the dates.
+		  Note that if a task is DONE and you type "\C" (Cancelled task)
+		  the function todo#UnMarkAsDone the task is restore, but if you
+		  type "\x" (toggle done) and the task is CANCELLED, the task is
+		  restored but the [CANCELLED] label remains.
+	ftplugin/todo.vim
+		- Modified keyword "Cancelled" -> [CANCELLED] to make it stand out
+		  better following the change above.
+
+v0.9.6 RC1		- 2026-05-26 -AP-
+	after/syntax/todo.vim  - 2026-05-26 -AP-
+		- Added syntax for NrrwRgn Plugin, to hide plugin header lines.
+	after/syntax/todo.vim, syntax/todo.vim  - 2026-06-23 -AP-
+		- Changed file format from dos to unix
+
 v0.9.5		- 2026-04-29 -AP-
 	after/syntax/todo.vim 
- 		- Removed Filter command. 
+		- Removed Filter command. 
 		  Too useful to be relegate to a todo list files. Moved in .vimrc.
+
 v0.9.4		- 2026-01-14 -AP-
 	after/syntax/todo.vim 
 		+ Added character "▶" (Black Right-Pointing Triangle unicode U+25B6,
@@ -15,10 +35,10 @@ v0.9.3		- 2025-11-17 -AP-
 
 v0.9.2		- 2025-11-14 -AP-
 	after/syntax/todo.vim 
-		+ added ":Filter" command (and :FV alias) to search and open results in a volatile
-		  buffer
+		+ added ":Filter" command (and :FV alias) to search and open results in a
+		  volatile buffer.
 		* In my vimrc There's also a ":Foldsearch" (":FF") command that search and
-		  fold lines doens't match. Maybe It should be put in the plugin
+		  fold lines doens't match. Maybe It should be put in the plugin.
 	syntax/todo.vim
 		* Modified color for TodoPriorityB from #ffb000 to #ff8000
 		* Modified color for TodoDueToday  from bold green to bold red (as
@@ -44,7 +64,7 @@ v2025-10-23
     evidenzia il pattern compreso lo spazio iniziale mentre se modifico in
     "syntax  match   TodoWaitingFrom  '\s\zs◀\S*'  contains=NONE" dico che la
     corrispondenza inizia (\zs) dal carattere ◀.
-  In caso di tack con priorità "colorata", ad esempio (A), tutta la riga
+  In caso di task con priorità "colorata", ad esempio (A), tutta la riga
     viene evidenziata rossa, comprese le keywords precedenti.  Per applicare
     la diversa colorazione alle keyword sopra, devo aggiungerle al contenuto
     di "syn match" delle priorità.
