@@ -2,6 +2,10 @@
 
 set -eu
 
+if [ -z "$2" ]; then
+    echo "Usage $0 vimcmd runtimepath"
+    echo "ex: $0 vim /home/.vim/bundle/vader.vim"
+fi
 vim="$1"
 rtp="$2"
 shift 2
