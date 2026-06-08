@@ -13,7 +13,7 @@ cd "${REPO_TOP}"
 
 echo "Check for Vader"
 echo "---------------"
-vim -Nu <(cat <<EOF
+$vim -Nu <(cat <<EOF
 function! s:chk_vader_exists()
     if exists(":Vader")
         cquit 0
