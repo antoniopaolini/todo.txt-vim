@@ -182,9 +182,10 @@ endfunction
 
 function! todo#GetDateRegexForFutureDates(...)
     " Get the reference date
-    let l:day=strftime("%d")
-    let l:month=strftime("%m")
-    let l:year=strftime("%Y")
+    let l:time=localtime()
+    let l:day=strftime("%d", l:time)
+    let l:month=strftime("%m", l:time)
+    let l:year=strftime("%Y", l:time)
     
     if a:0 >= 1
         let l:year=a:1
@@ -203,13 +204,14 @@ function! todo#GetDateRegexForFutureDates(...)
     let l:decade = strpart(l:year, 2, 1)
     let l:unit = strpart(l:year, 3, 1)
 
-    let l:futureRex = l:futureRex . '(20[' . l:decade . '-9][' . (l:unit + 1) . '-9])\-\d{2}\-\d{2}'
+    let l:futureRex = l:futureRex . '(20' . l:decade . '[' . (l:unit + 1) . '-9])\-\d{2}\-\d{2}'
+    let l:futureRex = l:futureRex . '|(20[' . (l:decade + 1) . '-9]\d)\-\d{2}\-\d{2}'
 
     "Cover for future months in the current year
     if l:month < 9
         let l:fmonth = '(0['. (l:month + 1) . '-9]|1[0-2])'
-    else
-        let l:fmonth = '(' . (l:month + 1) . ')'
+    elseif l:month < 12
+        let l:fmonth = '(1[' . (l:month + 1) % 10 . '-2])'
     endif
     let l:futureRex = l:futureRex . '|(' . l:year . '\-' . l:fmonth . '\-\d{2})'
 

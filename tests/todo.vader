@@ -328,6 +328,37 @@ Execute (2099-12-31 should NOT match with reference 2017-09-07):
 Execute (2100-01-01 should NOT match with reference 2017-09-07):
   Assert '2100-01-01' !~ b:rex
 
+Before:
+  let b:rex = todo#GetDateRegexForFutureDates(2025,09,29)
+Given todo (Some test todo items):
+  Active      due:2000-01-01 due:2050-01-01 2025-09-29 +Project @Context key:value  L04
+Execute (Log generated RegExp):
+  Log b:rex
+Execute (2025-11-25 should match with reference 2025-09-29):
+  Assert '2025-11-25' =~ '^' . b:rex . '$'
+Execute (2030-01-01 should match with reference 2025-09-29):
+  Assert '2030-01-01' =~ '^' . b:rex . '$'
+
+Before:
+  let b:rex = todo#GetDateRegexForFutureDates(2025,10,01)
+Given todo (Some test todo items):
+  Active      due:2000-01-01 due:2050-01-01 2025-10-01 +Project @Context key:value  L04
+Execute (Log generated RegExp):
+  Log b:rex
+Execute (2025-11-25 should match with reference 2025-10-01):
+  Assert '2025-11-25' =~ '^' . b:rex . '$'
+Execute (2025-12-31 should match with reference 2025-10-01):
+  Assert '2025-12-31' =~ '^' . b:rex . '$'
+
+Before:
+  let b:rex = todo#GetDateRegexForFutureDates(2025,11,01)
+Given todo (Some test todo items):
+  Active      due:2000-01-01 due:2050-01-01 2025-11-01 +Project @Context key:value  L04
+Execute (Log generated RegExp):
+  Log b:rex
+Execute (2025-12-31 should match with reference 2025-11-01):
+  Assert '2025-12-31' =~ '^' . b:rex . '$'
+
 " Test a high day/month
 Before:
   let b:rex = todo#GetDateRegexForPastDates(2017,11,27)
