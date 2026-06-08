@@ -33,7 +33,7 @@ Execute (Syntax for done task):
   AssertEqual 'TodoProject',      SyntaxAt( 3, 54)
   AssertEqual 'TodoContext',      SyntaxAt( 3, 63)
 Execute (Syntax for active task):
-  AssertEqual '',                 SyntaxAt( 4,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt( 4,  1)
   AssertEqual 'TodoOverDueDate',  SyntaxAt( 4, 13)
   AssertEqual 'TodoKey',          SyntaxAt( 4, 28)
   AssertEqual 'TodoKey',          SyntaxAt( 4, 72)
@@ -149,14 +149,14 @@ x 345678901234567890123456789012345678901234567890123456789012345678901234567890
 x   .    1    .    2    .    3    .    4    .    5    .    6    .    7    .    8  L22
 Execute (Syntax for invalid or misleading tasks):
   " Invalid done or priority
-  AssertEqual '',                 SyntaxAt( 3,  1)
-  AssertEqual '',                 SyntaxAt( 4,  1)
-  AssertEqual '',                 SyntaxAt( 5,  1)
-  AssertEqual '',                 SyntaxAt( 6,  1)
-  AssertEqual '',                 SyntaxAt( 7,  1)
-  AssertEqual '',                 SyntaxAt( 8,  1)
-  AssertEqual '',                 SyntaxAt( 9,  1)
-  AssertEqual '',                 SyntaxAt(10,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt( 3,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt( 4,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt( 5,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt( 6,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt( 7,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt( 8,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt( 9,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt(10,  1)
   " Valid keys and dates at start of line
   AssertEqual 'TodoKey',          SyntaxAt(11,  1)
   AssertEqual 'TodoDate',         SyntaxAt(11,  5)
@@ -165,24 +165,24 @@ Execute (Syntax for invalid or misleading tasks):
   " Invalid date formats.
   " FIXME: Not all cases are tested, not sure how strict to be
   " AssertEqual '',                 SyntaxAt(16, 15)  " FIXME
-  AssertEqual '',                 SyntaxAt(16, 24)
+  AssertEqual 'TodoTodo',         SyntaxAt(16, 24)
   " AssertEqual '',                 SyntaxAt(16, 33)  " FIXME
-  AssertEqual '',                 SyntaxAt(16, 42)
-  AssertEqual '',                 SyntaxAt(16, 44)
-  AssertEqual '',                 SyntaxAt(16, 55)
+  AssertEqual 'TodoTodo',         SyntaxAt(16, 42)
+  AssertEqual 'TodoTodo',         SyntaxAt(16, 44)
+  AssertEqual 'TodoTodo',         SyntaxAt(16, 55)
   " AssertEqual '',                 SyntaxAt(16, 64)  " FIXME
-  AssertEqual '',                 SyntaxAt(16, 78)
+  AssertEqual 'TodoTodo',         SyntaxAt(16, 78)
   " Contexts and projects on the start of a line (valid)
   AssertEqual 'TodoContext',      SyntaxAt(17,  1)
   AssertEqual 'TodoProject',      SyntaxAt(18,  1)
   " Invalid keys, etc
-  AssertEqual '',                 SyntaxAt(19,  5)
-  AssertEqual '',                 SyntaxAt(19, 55)
-  AssertEqual '',                 SyntaxAt(20,  1)
+  AssertEqual 'TodoTodo',         SyntaxAt(19,  5)
+  AssertEqual 'TodoTodo',         SyntaxAt(19, 55)
+  AssertEqual 'TodoTodo',         SyntaxAt(20,  1)
   AssertEqual 'TodoKey',          SyntaxAt(20, 34)
   AssertEqual 'TodoDate',         SyntaxAt(20, 41)
-  AssertEqual '',                 SyntaxAt(20, 55)
-  AssertEqual '',                 SyntaxAt(20, 69)
+  AssertEqual 'TodoTodo',         SyntaxAt(20, 55)
+  AssertEqual 'TodoTodo',         SyntaxAt(20, 69)
 Do (Insert a task due today):
   OTask due-\<BS>:\<C-R>=strftime("%Y-%m-%d")\<CR> today\<C-O>
 Then (Syntax for task due today):
