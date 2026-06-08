@@ -26,11 +26,11 @@ syntax enable
 autocmd filetype todo setlocal omnifunc=todo#Complete
 function! s:chk_vader_exists()
     if exists(":Vader")
-        cquit 0
+        qall!
     else
         echom 'Vader not found. Please install it.'
         echom 'https://github.com/junegunn/vader.vim'
-        cquit 1
+        cquit
     endif
 endfunction
 
