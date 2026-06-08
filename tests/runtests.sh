@@ -18,6 +18,12 @@ cd "${REPO_TOP}"
 echo "Check for Vader"
 echo "---------------"
 $vim -Nu <(cat <<EOF
+filetype off
+set rtp+=$rtp
+set rtp+=./
+filetype plugin indent on
+syntax enable
+autocmd filetype todo setlocal omnifunc=todo#Complete
 function! s:chk_vader_exists()
     if exists(":Vader")
         cquit 0
