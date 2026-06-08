@@ -11,6 +11,23 @@ export HOME=/var/empty
 REPO_TOP=$(git rev-parse --show-toplevel)
 cd "${REPO_TOP}"
 
+echo "Check for Vader"
+echo "---------------"
+vim -Nu <(cat <<EOF
+function! s:chk_vader_exists()
+    if exists(":Vader")
+        cquit 0
+    else
+        echom 'Vader not found. Please install it.'
+        echom 'https://github.com/junegunn/vader.vim'
+        cquit 1
+    endif
+endfunction
+
+command! ChkVaderExists call s:chk_vader_exists()
+EOF
+) '+ChkVaderExists' || exit 1
+
 echo "Basic environment"
 echo "-----------------"
 $vim -Nu <(cat <<EOF
