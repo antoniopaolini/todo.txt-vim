@@ -2,7 +2,7 @@
 " Description: Todo.txt sorting plugin
 " Author:      David Beniamine <david@beniamine.net>, Peter (fretep) <githib.5678@9ox.net>
 " Licence:     Vim licence
-" Website:     http://github.com/dbeniamine/todo.txt.vim
+" Website:     http://gitlab.com/dbeniamine/todo.txt-vim
 
 " These two variables are parameters for the successive calls the vim sort
 "   '' means no flags

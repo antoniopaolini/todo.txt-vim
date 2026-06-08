@@ -2,7 +2,7 @@
 " Description: Todo.txt syntax settings
 " Author:      David Beniamine <David@Beniamine.net>,Leandro Freitas <freitass@gmail.com>
 " License:     Vim license
-" Website:     http://github.com/dbeniamine/todo.txt-vim
+" Website:     http://gitlab.com/dbeniamine/todo.txt-vim
 
 if exists("b:current_syntax")
     finish

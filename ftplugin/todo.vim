@@ -2,7 +2,7 @@
 " Description: Todo.txt filetype detection
 " Author:      David Beniamine <David@Beniamine.net>, Leandro Freitas <freitass@gmail.com>
 " License:     Vim license
-" Website:     http://github.com/dbeniamine/todo.txt-vim
+" Website:     http://gitlab.com/dbeniamine/todo.txt-vim
 
 if ! exists("g:Todo_txt_loaded")
     let g:Todo_txt_loaded=0.8.2

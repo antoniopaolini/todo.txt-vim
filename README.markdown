@@ -103,20 +103,20 @@ filetype plugin on
 
 #### Vizardry
 
-If you have [Vizardry](https://github.com/dbeniamine/vizardry) installed,
+If you have [Vizardry](https://gitlab.com/dbeniamine/vizardry) installed,
 you can run from vim:
 
     :Invoke -u dbeniamine todo.txt-vim
 
 #### Pathogen install
 
-    git clone https://github.com/dbeniamine/todo.txt-vim.git ~/.vim/bundle/todo.txt-vim
+    git clone https://gitlab.com/dbeniamine/todo.txt-vim.git ~/.vim/bundle/todo.txt-vim
 
 Then from vim: `:Helptags` to update the doc
 
 #### Quick install
 
-        git clone https://github.com/dbeniamine/todo.txt-vim.git
+        git clone https://gitlab.com/dbeniamine/todo.txt-vim.git
         cd todo.txt-vim
         cp -r ./* ~/.vim
 
