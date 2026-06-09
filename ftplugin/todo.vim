@@ -33,7 +33,7 @@ vnoremap <script> <silent> <buffer> <Plug>TodotxtDecrementDueDateVisual :call <S
 
 noremap  <script> <silent> <buffer> <Plug>DoToggleMarkAsDone :call todo#ToggleMarkAsDone('')<CR>
                 \:silent! call repeat#set("\<Plug>DoToggleMarkAsDone")<CR>
-noremap  <script> <silent> <buffer> <Plug>DoCancel :call todo#ToggleMarkAsDone('Cancelled')<CR>
+noremap  <script> <silent> <buffer> <Plug>DoCancel :call todo#ToggleMarkAsDone('[CANCELLED]')<CR>
                 \:silent! call repeat#set("\<Plug>DoCancel")<CR>
 
 " Default key mappings {{{2
