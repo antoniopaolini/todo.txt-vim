@@ -58,6 +58,20 @@ highlight  default  link  TodoDone       Comment
 highlight  default  link  TodoPriorityA  Identifier
 highlight  default  link  TodoPriorityB  statement
 highlight  default  link  TodoPriorityC  type
+
+"Priority (W) for "Weekly" tasks, 
+"         (Y) for tasks awaiting someone or something 
+"             (the Y resembles multiple inputs converging into a single output), and 
+"         (Z) for "Maybe/Someday" tasks (as in GTD).
+"Priority (W) per le cose "Week, in Settimana", 
+"         (Y) per le cose in attesa di qualcuno o qualcosa 
+"             (la Y ricorda più input che convergono in un solo output), e 
+"         (Z) per le "prima o poi".
+
+
+highlight  default  link  TodoPriorityW String
+highlight  TodoPriorityY  term=standout ctermfg=1 ctermbg=7 guifg=#0087af guibg=#eeeeee gui=undercurl guisp=#66ceed
+highlight  default  link  TodoPriorityZ  SpecialKey
 highlight  default  link  TodoDate       PreProc
 highlight  default  link  TodoProject    Special
 highlight  default  link  TodoContext    Special
