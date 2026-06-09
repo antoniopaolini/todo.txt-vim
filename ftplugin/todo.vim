@@ -102,10 +102,11 @@ endif
 
 " Additional options {{{2
 " Prefix creation date when opening a new line {{{3
-if exists("g:Todo_txt_prefix_creation_date")
+if exists("g:Todo_txt_prefix_creation_date") && g:Todo_txt_prefix_creation_date == 1
     nnoremap <script> <silent> <buffer> o o<C-R>=strftime("%Y-%m-%d")<CR> 
     nnoremap <script> <silent> <buffer> O O<C-R>=strftime("%Y-%m-%d")<CR> 
-    inoremap <script> <silent> <buffer> <CR> <CR><C-R>=strftime("%Y-%m-%d")<CR> 
+    "inoremap <script> <silent> <buffer> <CR> <CR><C-R>=strftime("%Y-%m-%d")<CR> 
+    inoremap <script> <silent> <buffer> <expr> <CR> ((pumvisible()) ? ("\<C-y>") : ("\r\<C-R>=strftime(\"%Y-%m-%d\")\r "))
 endif
 
 " Functions for maps {{{1
