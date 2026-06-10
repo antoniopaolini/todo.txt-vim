@@ -9,33 +9,44 @@ if exists("b:current_syntax")
     finish
 endif
 
-syntax  match  TodoDone       '^[x]\s.\+$'               contains=TodoKey,TodoDate,TodoProject,TodoContext
-syntax  match  TodoPriorityA  '^(A) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityB  '^(B) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo	
-syntax  match  TodoPriorityC  '^(C) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo	
-syntax  match  TodoPriorityD  '^(D) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityE  '^(E) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityF  '^(F) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityG  '^(G) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityH  '^(H) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityI  '^(I) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityJ  '^(J) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityK  '^(K) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityL  '^(L) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityM  '^(M) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityN  '^(N) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityO  '^(O) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityP  '^(P) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityQ  '^(Q) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityR  '^(R) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityS  '^(S) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityT  '^(T) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityU  '^(U) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityV  '^(V) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityW  '^(W) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityX  '^(X) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityY  '^(Y) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
-syntax  match  TodoPriorityZ  '^(Z) .\+$'             contains=TodoKey,TodoDate,TodoProject,TodoContext,TodoDueToday,TodoOverDueDate,TodoThresholdDate,TodoWaitingFrom,TodoReplyTo
+syntax  cluster  TodoStart      contains=TodoTodo,TodoDone,TodoPriorityA,TodoPriorityB,TodoPriorityC,TodoPriorityD,TodoPriorityE,TodoPriorityF,TodoPriorityG,TodoPriorityH,TodoPriorityI,TodoPriorityJ,TodoPriorityK,TodoPriorityL,TodoPriorityM,TodoPriorityN,TodoPriorityO,TodoPriorityP,TodoPriorityQ,TodoPriorityR,TodoPriorityS,TodoPriorityT,TodoPriorityU,TodoPriorityV,TodoPriorityW,TodoPriorityX,TodoPriorityY,TodoPriorityZ,TodoProject,TodoContext
+syntax  cluster  TodoDoneArgs   contains=TodoKey,TodoDate,TodoProject,TodoContext
+syntax  cluster  TodoFullArgs   contains=@TodoDoneArgs,TodoDueToday,TodoOverDueDate,TodoThresholdDate
+
+
+
+hi def TodoCol0 guibg=black
+syntax  region TodoCol0  start=/^/ end=/$/ nextgroup=@TodoStart
+
+syntax  region  TodoTodo       contained start=//   end=/$/  contains=@TodoFullArgs
+syntax  region  TodoDone       contained start=/x /   end=/$/  contains=@TodoDoneArgs
+syntax  region  TodoPriorityA  contained start=/(A) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityB  contained start=/(B) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityC  contained start=/(C) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityD  contained start=/(D) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityE  contained start=/(E) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityF  contained start=/(F) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityG  contained start=/(G) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityH  contained start=/(H) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityI  contained start=/(I) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityJ  contained start=/(J) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityK  contained start=/(K) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityL  contained start=/(L) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityM  contained start=/(M) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityN  contained start=/(N) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityO  contained start=/(O) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityP  contained start=/(P) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityQ  contained start=/(Q) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityR  contained start=/(R) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityS  contained start=/(S) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityT  contained start=/(T) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityU  contained start=/(U) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityV  contained start=/(V) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityW  contained start=/(W) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityX  contained start=/(X) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityY  contained start=/(Y) / end=/$/  contains=@TodoFullArgs
+syntax  region  TodoPriorityZ  contained start=/(Z) / end=/$/  contains=@TodoFullArgs
+
 syntax  match  TodoDate       '\d\{2,4\}-\d\{2\}-\d\{2\}' contains=NONE
 syntax  match  TodoKey        '\S*\D:\S\S*'               contains=TodoDate
 syntax  match  TodoProject    '\(^\|\W\)+[^[:blank:]]\+'  contains=NONE
