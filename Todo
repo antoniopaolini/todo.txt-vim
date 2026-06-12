@@ -4,6 +4,13 @@ https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=2
 o
 https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/45
 
+***
+2026-06-12
+Se viene integrata la richiesta
+https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/48 creare una
+variabile per attivare o disattivare la evidenziazione di progetti e
+contesto nei task terminati.
+
 
 
 ***
@@ -18,10 +25,14 @@ del plugin NrrwRgn. Potrei creare una variabile che imposta se attivare o
 no questo highlight (vedi per esempio come è gestita in ftplugin\todo.vim
 la variabile "g:Todo_txt_prefix_creation_date".
 
+2026-06-12
 2024-05-09
 https://gitlab.com/dbeniamine/todo.txt-vim/-/issues/52
 Si potrebbe implementare una funzione per cui se c'è già la priorità e ridò
 la stessa questa viene tolta.
+La funzione che toglie è :call todo#RemovePriority(), bisogna vedere se c'è
+una funzione che legge la priorità e inserirle nella funzione che aggiunge
+la priorità.
 
 
 2024-05-09 Correggere la posizione del "Cancelled" nel file seguendo il
