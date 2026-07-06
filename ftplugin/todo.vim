@@ -33,7 +33,7 @@ vnoremap <script> <silent> <buffer> <Plug>TodotxtDecrementDueDateVisual :call <S
 
 noremap  <script> <silent> <buffer> <Plug>DoToggleMarkAsDone :call todo#ToggleMarkAsDone('')<CR>
                 \:silent! call repeat#set("\<Plug>DoToggleMarkAsDone")<CR>
-noremap  <script> <silent> <buffer> <Plug>DoCancel :call todo#ToggleMarkAsDone('Cancelled')<CR>
+noremap  <script> <silent> <buffer> <Plug>DoCancel :call todo#ToggleMarkAsDone('[CANCELLED]')<CR>
                 \:silent! call repeat#set("\<Plug>DoCancel")<CR>
 
 " Default key mappings {{{2
@@ -102,10 +102,11 @@ endif
 
 " Additional options {{{2
 " Prefix creation date when opening a new line {{{3
-if exists("g:Todo_txt_prefix_creation_date")
+if exists("g:Todo_txt_prefix_creation_date") && g:Todo_txt_prefix_creation_date == 1
     nnoremap <script> <silent> <buffer> o o<C-R>=strftime("%Y-%m-%d")<CR> 
     nnoremap <script> <silent> <buffer> O O<C-R>=strftime("%Y-%m-%d")<CR> 
-    inoremap <script> <silent> <buffer> <CR> <CR><C-R>=strftime("%Y-%m-%d")<CR> 
+    "inoremap <script> <silent> <buffer> <CR> <CR><C-R>=strftime("%Y-%m-%d")<CR> 
+    inoremap <script> <silent> <buffer> <expr> <CR> ((pumvisible()) ? ("\<C-y>") : ("\r\<C-R>=strftime(\"%Y-%m-%d\")\r "))
 endif
 
 " Functions for maps {{{1
