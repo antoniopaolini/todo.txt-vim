@@ -4,6 +4,12 @@ https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=2
 o
 https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/45
 
+
+2026-06-17
+Creare una funzione che automatizzi la ricerca delle RP
+tipo map \rp /[^-]\d\{2,3}.2[56]<cr>
+Oppure che la passi a NrrwRgn.
+
 ***
 2026-06-12
 Se viene integrata la richiesta
