@@ -23,6 +23,13 @@ hi TodoProjectTitle  cterm=bold,underline guifg=#0000ff gui=bold,reverse
 " devo dare una risposta a qualcuno o se aspetto la fine dell'attività di
 " qualcuno per poter procedere.
 " Li vado a etichettare con "WaitingFrom" (◀) e "ReplyTo" (▶)
+"________________________________________________________Modifiche -AP- 2026-07-15
+" Aggiungo la gestione con "cluster e contains" perché altrimenti ne vedo
+" l'evidenziazione solo se non ce ne sono altre, cioè ad esempio se c'è una
+" priorità.
+" Devo fare la modifica nel file syntax!  Definisco il seguente cluster.
+" syntax cluster TodoAssignment contains=TodoWaitingFrom,TodoReplyTo
+
 syntax  match   TodoWaitingFrom  '\s\zs◀\S*'  contains=NONE
 syntax  match   TodoReplyTo      '\s\zs▶\S*'  contains=NONE
 

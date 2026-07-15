@@ -3,7 +3,7 @@
 " Author:      Antonio Paolini, David Beniamine <David@Beniamine.net>,Leandro Freitas <freitass@gmail.com>
 " License:     Vim license
 " Website:     http://github.com/dbeniamine/todo.txt-vim
-" Revision:    v0.9.1  - 2025-10-23 
+" Revision:    v0.9.2  - 2026-07-15
 
 if exists("b:current_syntax")
     finish
@@ -11,7 +11,8 @@ endif
 
 syntax  cluster  TodoStart      contains=TodoTodo,TodoDone,TodoPriorityA,TodoPriorityB,TodoPriorityC,TodoPriorityD,TodoPriorityE,TodoPriorityF,TodoPriorityG,TodoPriorityH,TodoPriorityI,TodoPriorityJ,TodoPriorityK,TodoPriorityL,TodoPriorityM,TodoPriorityN,TodoPriorityO,TodoPriorityP,TodoPriorityQ,TodoPriorityR,TodoPriorityS,TodoPriorityT,TodoPriorityU,TodoPriorityV,TodoPriorityW,TodoPriorityX,TodoPriorityY,TodoPriorityZ,TodoProject,TodoContext
 syntax  cluster  TodoDoneArgs   contains=TodoKey,TodoDate,TodoProject,TodoContext
-syntax  cluster  TodoFullArgs   contains=@TodoDoneArgs,TodoDueToday,TodoOverDueDate,TodoThresholdDate
+syntax  cluster  TodoAssignment contains=TodoWaitingFrom,TodoReplyTo
+syntax  cluster  TodoFullArgs   contains=@TodoDoneArgs,TodoDueToday,TodoOverDueDate,TodoThresholdDate,@TodoAssignment
 
 
 
