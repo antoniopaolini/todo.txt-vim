@@ -1,8 +1,7 @@
 Vedi "issues" su https://gitlab.com/dbeniamine/todo.txt-vim/-/issues
 Ad esempio:
 https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=239475c23e121e8603d8bf916c7951335e28f49a
-o
-https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/45
+(o https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/45 DONE!!!)
 
 
 2026-06-17
@@ -39,6 +38,7 @@ la stessa questa viene tolta.
 La funzione che toglie è :call todo#RemovePriority(), bisogna vedere se c'è
 una funzione che legge la priorità e inserirle nella funzione che aggiunge
 la priorità.
+UPDATE 2026-07-17: NON SERVE!!! La funzione è già collegata al map <leader>-
 
 
 2024-05-09 Correggere la posizione del "Cancelled" nel file seguendo il

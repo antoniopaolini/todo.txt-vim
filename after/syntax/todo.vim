@@ -26,7 +26,7 @@ hi TodoProjectTitle  cterm=bold,underline guifg=#0000ff gui=bold,reverse
 "________________________________________________________Modifiche -AP- 2026-07-15
 " Aggiungo la gestione con "cluster e contains" perché altrimenti ne vedo
 " l'evidenziazione solo se non ce ne sono altre, cioè ad esempio se c'è una
-" priorità.
+" priorità prendono l'evidenziazione della priorità.
 " Devo fare la modifica nel file syntax!  Definisco il seguente cluster.
 " syntax cluster TodoAssignment contains=TodoWaitingFrom,TodoReplyTo
 
