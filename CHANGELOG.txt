@@ -1,3 +1,6 @@
+v0.9.8-alpha	- 2026-07-20 -AP-
+Added CHANGELOG-github.md for release info
+
 v0.9.7			- 2026-07-17 -AP-
 Cleanup and release.
 

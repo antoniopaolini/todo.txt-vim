@@ -1,3 +1,5 @@
+## 2026-07-20: v0.9.8-alpha
+Added CHANGELOG-github.md for release info
 
 ## 2026-07-17: v0.9.7 (Almost done)
 Cleanup and release
