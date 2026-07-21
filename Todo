@@ -4,6 +4,19 @@ https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=2
 (o https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/45 DONE!!!)
 
 
+026-07-21 
+(A) Copiare le funzioni più interessanti di ricerca in after_ftplugin
+Per ora ho messo solo FilterVolatile.
+
+2026-07-21
+Potrei pensare di prendere il plugin di dbenjamine "pulito" e mettere le mie
+personalizzazioni in "after.
+Vedi il punto 3 di: 
+	:help ftplugin-overrule
+.
+
+
+
 2026-06-17
 Creare una funzione che automatizzi la ricerca delle RP
 tipo map \rp /[^-]\d\{2,3}.2[56]<cr>

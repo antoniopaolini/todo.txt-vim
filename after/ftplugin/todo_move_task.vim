@@ -1,4 +1,4 @@
-" ============= function TagliaMarksEAppendi() ============== 2026-07-09 -AP-
+" ============= function TagliaMarksEAppendi() [gemini]====== 2026-07-09 -AP-
 " This function move marked tasks on another file in the same directory where
 " is the actual edited todo file.
 " It is useful if you want to organise tasks by files or to move "someday" 
@@ -16,6 +16,13 @@
 "TODO: Translate all the comments (also the function names? Maybe not).
 "TODO: integrare nel file delle funzioni (autoload\todo.vim?)
 "
+" Execution guard mechanism avoid multiple execution, for example if the file 
+" is re-opened by `:e` (see :help ftplugin)
+if exists("b:did_todo_move_task")
+  finish
+endif
+let b:did_todo_move_task = 1
+
 function! TagliaMarksEAppendi()
   let l:righe_trovate = {}
 

@@ -41,17 +41,6 @@ hi default link     TodoReplyTo     DiffDelete
 imap > ▶
 imap < ◀
 
-"________________________________________________________Modifiche -AP- 2025-11-14
-"Aggiungo una funzione di filtro per cercare velocemente tra i task
-"(Per ora la metto in questo file, poi la sposterò in after/plugin? O metto
-"tutto solo in "after"?
-"Risposta: in ftplugin!)
-"2026-04-29: la metto nel vimrc per averla disponibile sempre.
-"command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile syn=todo | put! a | noh
-""Filter & show in a Volatile buffer (TODO: si può fare un map? R: si, vedi function NarrowSearch nel mio vimrc )
-"command -nargs=? FV Filter <args>
-
-
 "________________________________________________________Modifiche -AP- 2026-05-26
 "Definisco una evidenziazione per le righe di intestazione del plugin NrrwRgn,
 "per renderle meno evidenti.
