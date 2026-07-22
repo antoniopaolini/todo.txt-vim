@@ -5,9 +5,11 @@
 " Website:     FIXME http://github.com/dbeniamine/todo.txt-vim
 
 " If I defined these commands also in my vimrc I can set also the next guard
-" variable, in order to not execute twice this code.
-if exists("b:did_todo_FilterVolatile") | finish | endif
-let b:did_todo_FilterVolatile = 1
+" variable, in order to not execute twice this code.a
+" If I want to disable from vimrc the variable scope should be relative to 
+" the Window (w:) or Global (g:)
+if exists("w:did_todo_FilterVolatile") | finish | endif
+let w:did_todo_FilterVolatile = 0
 
 "________________________________________________________Modifiche -AP- 2025-11-14
 "Aggiungo una funzione di filtro per cercare velocemente tra i task

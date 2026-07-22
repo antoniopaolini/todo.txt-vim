@@ -5,8 +5,6 @@
 if exists("b:did_FM_fold_RP") | finish | endif
 let b:did_FM_fold_RP = 1
 
-
-
 let g:cerca_epiega_attivo = 0
 let g:cerca_epiega_saved_search = ''
 

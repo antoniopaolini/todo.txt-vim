@@ -18,6 +18,7 @@
 "
 " Execution guard mechanism avoid multiple execution, for example if the file 
 " is re-opened by `:e` (see :help ftplugin)
+" If already loaded, we're done...
 if exists("b:did_todo_move_task")
   finish
 endif
