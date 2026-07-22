@@ -1,3 +1,14 @@
+## 2026-07-22: v0.9.8-alpha3
+* Fixed scope of did_todo_FilterVolatile variable.
+  If set in .vimrc it was set also in opened file but if I open
+  another todo (in the alternate buffer, for example), when I switch to
+  the alternate, the variable is not set and the commands will be reloaded.
+  Global scope is required. Windows scope is not enough if we use tabs.
+
+## 2026-07-21: v0.9.8-alpha2
+Moved auxiliary funcions in after/ftplugin, starting with new 
+work utility FM_fold_RP
+
 ## 2026-07-20: v0.9.8-alpha
 Added CHANGELOG-github.md for release info
 
