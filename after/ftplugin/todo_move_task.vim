@@ -70,7 +70,7 @@ function! TagliaMarksEAppendi()
     " Se il file esiste, legge il contenuto attuale e appende il nuovo testo
     let l:contenuto_esistente = readfile(l:nome_file)
     let l:nuovo_contenuto = l:contenuto_esistente + l:testo_da_spostare
-    call writefile(l:nuovo_contents, l:nome_file)
+    call writefile(l:nuovo_contenuto, l:nome_file)
   else
     " Se il file non esiste, lo crea da zero
     call writefile(l:testo_da_spostare, l:nome_file)

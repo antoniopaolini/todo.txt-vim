@@ -3,8 +3,14 @@ Ad esempio:
 https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=239475c23e121e8603d8bf916c7951335e28f49a
 (o https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/45 DONE!!!)
 
+2026-07-29
+- Aggiungere t: (treshold date) alla documentazione.
+- installazione con vim packadd
+- Potrei rimettere il file "syntax" a posto (a parte le correzioni e le
+  aggiunte) e spostare le personalizzazioni in "After/syntax", specificando
+  nella documentazione di modificare lì se ci sono colori non graditi
 
-026-07-21 
+2026-07-21 
 (A) Copiare le funzioni più interessanti di ricerca in after_ftplugin
 Per ora ho messo solo FilterVolatile.
 

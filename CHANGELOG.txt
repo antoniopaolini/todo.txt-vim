@@ -1,3 +1,19 @@
+CHANGELOG
+	Format:
+		+ = added
+		* = changed/fixed
+
+v0.9.8-RC2		- 2026-07-31 -AP-
+	* Fixed error in function TagliaMarksEAppendi(), in the plugin file
+	  after\ftplugin\todo_move_task.vim. If the destination file exists
+	  the function fails. HIGH RISK OF DATA LOSS!!!
+
+v0.9.8-RC1		- 2026-07-27 -AP-
+	+ Added preliminary version of qftodo.vim,  that applies
+	  the todo syntax for the quickfix window, if called with:
+	  :vimgrep // % | copen | setlocal syntax=qftodo
+	  TODO: refine to make it more idiomatic and more compact.
+	  
 v0.9.8-alpha3	- 2026-07-22 -AP-
 	* Fixed scope of did_todo_FilterVolatile variable.
 	  If set in .vimrc it was set also in opened file but if I open
@@ -29,6 +45,7 @@ v0.9.7 RC2 		- 2026-07-09 -AP-
 	+ [PRELIMINARY] Added function to move tasks in a different file (useful
 	  if you want to organise tasks by files or to move, i.e. "someday" tasks 
 	  in a long-term todo file in order to keep clean the main "todo.txt").
+	  See after\ftplugin\todo_move_task.vim
 
 v0.9.7 RC1		- 2026-06-10 -AP-
 	+ Allow syntax inclusion, by going match → region

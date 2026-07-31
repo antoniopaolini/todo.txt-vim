@@ -1,4 +1,26 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+## v0.9.8-RC2		- 2026-07-31 -AP-
+### Fixed
+	* Fixed error in function TagliaMarksEAppendi(), in the plugin file
+	  after\ftplugin\todo_move_task.vim. If the destination file exists
+	  the function fails. **HIGH RISK OF DATA LOSS!!!**
+
+## 2026-07-27: v0.9.8-RC1
+### Added
+* Added preliminary version of qftodo.vim,  that applies
+  the todo syntax for the quickfix window, if called with:
+  :vimgrep // % | copen | setlocal syntax=qftodo
+  TODO: refine to make it more idiomatic and more compact.
+
 ## 2026-07-22: v0.9.8-alpha3
+### Fixed
 * Fixed scope of did_todo_FilterVolatile variable.
   If set in .vimrc it was set also in opened file but if I open
   another todo (in the alternate buffer, for example), when I switch to
@@ -6,6 +28,7 @@
   Global scope is required. Windows scope is not enough if we use tabs.
 
 ## 2026-07-21: v0.9.8-alpha2
+### Changed
 Moved auxiliary funcions in after/ftplugin, starting with new 
 work utility FM_fold_RP
 
