@@ -3,6 +3,7 @@
 " Author:      Antonio Paolini
 " License:     Vim license
 " Website:     FIXME http://github.com/dbeniamine/todo.txt-vim
+" Revision:    v0.3.0  - 2026-08-04
 
 " If I defined these commands also in my vimrc I can set also the next guard
 " variable, in order to not execute twice this code.

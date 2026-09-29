@@ -3,6 +3,9 @@
 " is the actual edited todo file.
 " It is useful if you want to organise tasks by files or to move "someday" 
 " tasks in a long-term todo file in order to keep clean the main "todo.txt").
+" INFO: Started in v 0.9.7 RC2- renamed from sposta_task to todo_move_task
+" in commit 80cdafb
+" Revision:    v0.2.1  - 2026-07-31
 "
 " Usage: 
 "	1. Mark the lines to be moved away from the todo file.

@@ -3,6 +3,10 @@ Ad esempio:
 https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=239475c23e121e8603d8bf916c7951335e28f49a
 (o https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/45 DONE!!!)
 
+2026-09-29
+Pulire questo file! Potrebbe essere nel formato todo.txt...
+
+
 2026-07-29
 - Aggiungere t: (treshold date) alla documentazione.
 - installazione con vim packadd
@@ -13,6 +17,7 @@ https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=2
 2026-07-21 
 (A) Copiare le funzioni più interessanti di ricerca in after_ftplugin
 Per ora ho messo solo FilterVolatile.
+DONE: 2026-09-29
 
 2026-07-21
 Potrei pensare di prendere il plugin di dbenjamine "pulito" e mettere le mie

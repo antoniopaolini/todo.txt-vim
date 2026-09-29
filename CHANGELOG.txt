@@ -3,6 +3,15 @@ CHANGELOG
 		+ = added
 		* = changed/fixed
 
+v0.9.8			- 2026-09-29 -AP-
+	* Cleanup of qftodo.vim syntax file: Using "runtime" I'm able to include
+	  quickfix syntax without re-adding the rules in qf.vim 
+	* Moved qftodo.vim form PLUGIN/syntax to PLUGIN/after/syntax
+	* FM_fold_RP: helper for my day-to-day work at FM. some slighty change.
+	+ New Quickfix filter! works in conjunction with the qftodo syntax file. 
+	  Moved my mapping from vimrc to the plugin.
+	* Added version and others info to some files.
+
 v0.9.8-RC2		- 2026-07-31 -AP-
 	* Fixed error in function TagliaMarksEAppendi(), in the plugin file
 	  after\ftplugin\todo_move_task.vim. If the destination file exists
@@ -23,7 +32,7 @@ v0.9.8-alpha3	- 2026-07-22 -AP-
 
 v0.9.8-alpha2	- 2026-07-21 -AP-
 	+ Moved auxiliary funcions in after/ftplugin, starting
-	  with new work utility FM_fold_RP
+	  with new work utility FM_fold_RP and FilterVolatile.
 
 v0.9.8-alpha	- 2026-07-20 -AP-
 Added CHANGELOG-github.md for release info

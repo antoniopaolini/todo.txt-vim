@@ -3,6 +3,8 @@
 " Author:      Antonio Paolini
 " License:     Vim license
 " Website:     FIXME http://github.com/dbeniamine/todo.txt-vim
+" Website:     http://github.com/antoniopaolini/todo.txt-vim
+" Revision:    v1.0.0  - 2026-09-29
 
 
 

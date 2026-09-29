@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+NONE
+
+## v0.9.8   		- 2026-09-29 -AP-
+### Changed
+* Cleanup of qftodo.vim syntax file: Using "runtime" I'm able to include
+  quickfix syntax without re-adding the rules in qf.vim 
+* Moved qftodo.vim form PLUGIN/syntax to PLUGIN/after/syntax
+* FM_fold_RP: helper for my day-to-day work at FM. some slighty change.
+* Added version and others info to some files.
+### Added
++ New Quickfix filter! works in conjunction with the qftodo syntax file. 
+  Moved my mapping from vimrc to the plugin.
+
 ## v0.9.8-RC2		- 2026-07-31 -AP-
 ### Fixed
 	* Fixed error in function TagliaMarksEAppendi(), in the plugin file
@@ -30,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## 2026-07-21: v0.9.8-alpha2
 ### Changed
 Moved auxiliary funcions in after/ftplugin, starting with new 
-work utility FM_fold_RP
+work utility FM_fold_RP and FilterVolatile.
 
 ## 2026-07-20: v0.9.8-alpha
 Added CHANGELOG-github.md for release info
