@@ -4,7 +4,7 @@
 " License:     Vim license
 " Website:     FIXME http://github.com/dbeniamine/todo.txt-vim
 " Website:     http://github.com/antoniopaolini/todo.txt-vim
-" Revision:    v1.0.0  - 2026-09-29
+" Revision:    v1.0.1  - 2026-10-07
 
 
 
@@ -32,8 +32,8 @@ hi TodoProjectTitle  cterm=bold,underline guifg=#0000ff gui=bold,reverse
 " Devo fare la modifica nel file syntax!  Definisco il seguente cluster.
 " syntax cluster TodoAssignment contains=TodoWaitingFrom,TodoReplyTo
 
-syntax  match   TodoWaitingFrom  '\s\zs◀\S*'  contains=NONE
-syntax  match   TodoReplyTo      '\s\zs▶\S*'  contains=NONE
+syntax  match   TodoWaitingFrom  '\s\zs◀\w*'  contains=NONE
+syntax  match   TodoReplyTo      '\s\zs▶\w*'  contains=NONE
 
 hi default link     TodoWaitingFrom DiffAdd
 hi default link     TodoReplyTo     DiffDelete

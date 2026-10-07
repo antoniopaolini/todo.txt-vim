@@ -18,6 +18,7 @@
 " 
 "TODO: Translate all the comments (also the function names? Maybe not).
 "TODO: integrare nel file delle funzioni (autoload\todo.vim?)
+"TODO: header del file in alto (vedi altri file)
 "
 " Execution guard mechanism avoid multiple execution, for example if the file 
 " is re-opened by `:e` (see :help ftplugin)

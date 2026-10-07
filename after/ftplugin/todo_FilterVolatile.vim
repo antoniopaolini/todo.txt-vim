@@ -1,5 +1,7 @@
 " File:        after/todo_FilterVolatile.vim
 " Description: Todo.txt syntax settings,mapping and other improvements
+" Description: FIXME: insert description here: in english the next row
+"   Aggiungo una funzione di filtro per cercare velocemente tra i task
 " Author:      Antonio Paolini
 " License:     Vim license
 " Website:     FIXME http://github.com/dbeniamine/todo.txt-vim

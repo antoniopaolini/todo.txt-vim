@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 NONE
+### Changed
+* after\syntax\todo.vim: Changed WaitingFrom and ReplyTo regex. 
+  Now you can use punctuation after keyword. -AP- 2026-10-07
+* Some little adjustements to the header in files and internal documentation
+  (for example changed TODO file in Todo.txt file and formatted as todo.txt).
+
+### Added
+* Added after\ftplugin\todo.vim with command and shortcut to insert week header line -AP- 2026-10-01
+
+### Fixed
+
 
 ## v0.9.8   		- 2026-09-29 -AP-
 ### Changed

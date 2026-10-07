@@ -1,0 +1,14 @@
+x 2026-10-07 2026-09-29 Pulire questo file! Potrebbe essere nel formato todo.txt...
+x 2026-09-29 2026-07-21 Copiare le funzioni più interessanti di ricerca in after_ftplugin Per ora ho messo solo FilterVolatile. pri:A
+x 2026-07-21 2026-06-17 Creare una funzione che automatizzi la ricerca delle RP tipo map \rp /[^-]\d\{2,3}.2[56]<cr> Oppure che la passi a NrrwRgn.
+x 2026-10-07 2026-06-12 [CANCELLED] https://gitlab.com/dbeniamine/todo.txt-vim/-/issues/52
+x 2026-10-07 2024-05-09 [CANCELLED] https://gitlab.com/dbeniamine/todo.txt-vim/-/issues/52
+x 2026-10-07 2024-05-09 [CANCELLED] Si potrebbe implementare una funzione per cui se c'è già la priorità e ridò
+x 2026-10-07 2024-05-09 [CANCELLED] la stessa questa viene tolta.
+x 2026-10-07 2024-05-09 [CANCELLED] La funzione che toglie è :call todo#RemovePriority(), bisogna vedere se c'è
+x 2026-10-07 2024-05-09 [CANCELLED] una funzione che legge la priorità e inserirle nella funzione che aggiunge
+x 2026-10-07 2024-05-09 [CANCELLED] la priorità.
+x 2026-10-07 2024-05-09 [CANCELLED] UPDATE 2026-07-17: NON SERVE!!! La funzione è già collegata al map <leader>-
+x 2026-06-03 2024-05-09 Correggere la posizione del "Cancelled" nel file seguendo il formato ufficiale (issue 51 su gitlab)
+x 2026-07-09 2024-06-14 Creare un comando, prendendo spunto delle funzioni presenti per rimuovere i task svolti, per spostare righe o gruppi di righe (magari con la selezione visuale) in un altro file TODO (es, prima_o_poi, oppure progetto-X, etc)
+x 2026-10-07 2026-10-01 Aggiungere un comando che mi mette l'intestazione della settimana, cioè: "===================== Week 40" P.S: il "40" viene da echo strftime("%V")

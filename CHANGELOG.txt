@@ -3,6 +3,16 @@ CHANGELOG
 		+ = added
 		* = changed/fixed
 
+v0.9.9-20261007	- 2026-10-07 -AP-
+	* after\syntax\todo.vim: Changed WaitingFrom and ReplyTo regex. 
+	  Now you can use punctuation after keyword.
+	* TODO file project: Changed in Todo.txt, reformatted as todo.txt file 
+	  and added "done.txt" to te project.
+
+v0.9.9-20261001	- 2026-10-01 -AP-
+	* Added after\ftplugin\todo.vim with command and shortcut to insert 
+	  week header line.
+
 v0.9.8			- 2026-09-29 -AP-
 	* Cleanup of qftodo.vim syntax file: Using "runtime" I'm able to include
 	  quickfix syntax without re-adding the rules in qf.vim 
