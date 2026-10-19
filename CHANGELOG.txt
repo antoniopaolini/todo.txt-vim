@@ -3,6 +3,9 @@ CHANGELOG
 		+ = added
 		* = changed/fixed
 
+v0.9.0-20261019 - 2026-10-19 -AP-
+	* Inserted "x " at the start of the weekline -AP- 2026-10-19
+
 v0.9.9-20261007	- 2026-10-07 -AP-
 	* after\syntax\todo.vim: Changed WaitingFrom and ReplyTo regex. 
 	  Now you can use punctuation after keyword.

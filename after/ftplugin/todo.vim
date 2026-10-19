@@ -3,7 +3,7 @@
 " Author:      Antonio Paolini
 " License:     Vim license
 " Website:     http://github.com/antoniopaolini/todo.txt-vim
-" Revision:    v0.1.0  - 2026-10-01
+" Revision:    v0.1.1  - 2026-10-19
 "
 " USAGE:       
 "              :Weekline    Insert header week
@@ -16,11 +16,10 @@
 " Altra versione: 
 " command! Weekline put =repeat('=', 12) . ' week ' . strftime('%V')
 
-command! WeekLine call append(line('.'), repeat('=', 21) . ' Week ' . strftime('%V'))
+command! WeekLine call append(line('.'), 'x ' . repeat('=', 21) . ' Week ' . strftime('%V'))
 nnoremap <leader>wl	:WeekLine<CR>
 
 "DONE: TODO: tengo \wh, week header, o lo rinomino in wl, week line?
 "------------------------------------------------------------------------
-
 
 

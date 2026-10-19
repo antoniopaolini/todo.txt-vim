@@ -15,6 +15,7 @@ NONE
 
 ### Added
 * Added after\ftplugin\todo.vim with command and shortcut to insert week header line -AP- 2026-10-01
+* Inserted "x " at the start of the weekline -AP- 2026-10-19
 
 ### Fixed
 
