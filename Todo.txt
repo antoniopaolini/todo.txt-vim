@@ -4,7 +4,15 @@ https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=2
 (o https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/45 DONE!!!)
 
 
-
+2026-09-14
+Sistemare evidenziazione dei metadata key:value.
+Impostare alcune regole:
+- non è un tag se dopo i ":" c'è uno spazio
+- non è un tag dd:dd; è un orario.
+- non è un tag se i ":" sono preceduti da una sola lettera e seguiti da un "\"; è un path.
+- non è un tag una cosa tipo ????????? Aggiungere gli altri casi
+- Aggiungere tag tipo est: per estimated time e et: per elapsed tim
+- I metadati tipo key:value con key=pri dovrebbero essere formattati a parte, ad esempio pri:A dovrebbe avere la A (solo lei?) colorata della priorità A, la pri:B con la B, etc
 
 2026-07-29 - Aggiungere t: (treshold date) alla documentazione.
 2026-07-29 - installazione con vim packadd
@@ -23,11 +31,32 @@ https://gitlab.com/dbeniamine/todo.txt-vim/-/merge_requests/51/diffs?commit_id=2
 ***
 2026-06-03 Copiare le funzioni di ricerca Filter Volatile (:FV) e Filter Edit (:FE) nella documentazione o nel plugin (magari con una opzione per attivarle).  N.B. :FE deve controllare la dipendenza da NrrwRgn!
 
+
+
+
+========================== Qui sotto non in formato todo.txt =============================
 2026-06-03
 Ho creato una regola in syntax che mi "nasconde" le righe di intestazione
 del plugin NrrwRgn. Potrei creare una variabile che imposta se attivare o 
 no questo highlight (vedi per esempio come è gestita in ftplugin\todo.vim
 la variabile "g:Todo_txt_prefix_creation_date".
+
+2026-08-27
+- CORREGGERE! 
+| Se ho delle righe tipo: 
+| *******************************
+| 2026-07-30 vedere se si possono attivare da remoto gli strumenti (PSU e trigger) a +ritardo_banco +lab
+| 2026-07-30 si potrebbe pensare di usare un pulse generator (tipo quello semplice di AoE) +ritardo_banco +lab
+| *******************************
+| il progetto "+ritardo_banco" non viene aggiunto all'elenco
+| dell'autocompletamento.
+DEBUG: CAPITO! dipende dalla posizione!
+Sia per il progetto che per il contesto, vengono rilevati solo gli ultimi!
+Ad esempio, con la riga:
+|2026-08-28 prova @ciccio pippo pluto @coccio +pippo @cocco +pluto aa +paperino
+man mano che la scrivo, aggiungendo i progetti ed i contesti mi rendo conto che
+viene suggerito solo l'ultimo inserito. Non posso farci niente in maniera veloce, dovrei andare a vedere come viene gestito l'autocompletamento del progetto nel plugin e creare, invece di una variabile, magari un array.
+Per ora lascio così.
 
 
 

@@ -16,6 +16,8 @@ NONE
 ### Added
 * Added after\ftplugin\todo.vim with command and shortcut to insert week header line -AP- 2026-10-01
 * Inserted "x " at the start of the weekline to prevent the addition of a closing date when moving the weekline header to 'done' file.
+* Added function that automatically sets the alternate file if there are only two buffers opened (file todo_SetAlternateBuffer.vim). -AP-2026-11-09
+* Added autosave function (\after\ftplugin\todo_AutoSave.vim) -AP-2026-11-24
 
 ### Fixed
 

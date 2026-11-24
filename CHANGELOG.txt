@@ -3,7 +3,14 @@ CHANGELOG
 		+ = added
 		* = changed/fixed
 
-v0.9.0-20261019 - 2026-10-19 -AP-
+v0.9.9-20261124 - 2026-11-24 -AP-
+	+ Added autosave function (\after\ftplugin\todo_AutoSave.vim)
+
+v0.909-20261109 - 2026-11-09 -AP-
+	+ Added function that automatically sets the alternate file if there 
+	  are only two buffers opened (file todo_SetAlternateBuffer.vim).
+
+v0.9.9-20261019 - 2026-10-19 -AP-
 	* Inserted "x " at the start of the weekline to prevent the addition 
 	  of a closing date when moving the weekline header to 'done' file.
 
